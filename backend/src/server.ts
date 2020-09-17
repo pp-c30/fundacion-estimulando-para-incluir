@@ -1,6 +1,6 @@
 import express,{Application} from "express";
 import enrutadorIndex from "./routes/index.routes";
-//import enrutadorPagos from "./routes/usuario.routes";
+//import enrutadorUsuario from "./routes/usuario.routes";
 
 export class Server {
     app:Application;
