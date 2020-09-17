@@ -5,7 +5,7 @@ export async function conexion(){
             host:'localhost',
             user:'root',
             password:'',
-            database:'api_rest'
+            database:'fei'
         });
     return connnect;
 }
