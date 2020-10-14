@@ -9,7 +9,6 @@ import { UsuarioController } from "../controllers/usuario.controller";
 //
 let usuarioController = new UsuarioController();
 
-
 //Ruta con el método GET para obtener datos de la tabla USUARIO y mostrarlos 
 enrutadorUsuario.route('/usuario').get(usuarioController.listaUsuario);
 //Ruta con el método POST para guardar o cargar datos en la tabla USUARIO
