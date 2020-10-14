@@ -2,6 +2,10 @@ import express,{Application} from "express";
 import enrutadorIndex from "./routes/index.routes";
 import enrutadorCategoria from "./routes/categoria.routes";
 import enrutadorRubro from "./routes/rubro.routes";
+import enrutadorProducto from "./routes/producto.routes";
+
+//Importo body-parser para posibles errores de JSON
+import bodyParser from 'body-parser';
 
 export class Server {
     app:Application;
@@ -15,6 +19,7 @@ export class Server {
     }
 
     configuracion() {
+        this.app.use(bodyParser.json());
         this.app.set('port', process.env.port || 3000);
     }
 
@@ -22,6 +27,7 @@ export class Server {
         this.app.use(enrutadorIndex);
         this.app.use(enrutadorCategoria);
         this.app.use(enrutadorRubro);
+        this.app.use(enrutadorProducto);
     }
 
     middleware(){
