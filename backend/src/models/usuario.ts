@@ -8,4 +8,5 @@ export interface IUsuario
     provincia: string;
     dirección: string;
     codigoPostal: number;
+    idRubro: number;
 }
