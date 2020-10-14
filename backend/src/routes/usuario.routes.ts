@@ -15,11 +15,11 @@ enrutadorUsuario.route('/usuario').get(usuarioController.listaUsuario);
 //Ruta con el método POST para guardar o cargar datos en la tabla USUARIO
 enrutadorUsuario.route('/usuario').post(usuarioController.guardarUsuario);
 //
-enrutadorUsuario.route('/usuario':id).delete(usuarioController.eliminarUsuario);
+enrutadorUsuario.route('/usuario/:id').delete(usuarioController.eliminarUsuario);
 //
-enrutadorUsuario.route('/usuario':id).put(usuarioController.actualizarUsuario);
+enrutadorUsuario.route('/usuario/:id').put(usuarioController.actualizarUsuario);
 //
-enrutadorUsuario.route('/usuario':id).get(usuarioController.obtenerUnUsuario);
+enrutadorUsuario.route('/usuario/:id').get(usuarioController.obtenerUnUsuario);
 
 //
 export default enrutadorUsuario;
