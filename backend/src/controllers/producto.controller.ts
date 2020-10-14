@@ -18,7 +18,7 @@ export class ProductoController {
 
         //Guardo en la variable productos el JSON con todos los productos presentes en la tabla
         let producto = await db.query('SELECT * FROM producto')
-
+                
         //Muestro el contenido de la variable producto
         return res.json(producto);
     }

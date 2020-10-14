@@ -15,9 +15,9 @@ export class UsuarioController
     {
         const db = await conexion();
         let usuario = await  db.query('select * from usuario_comercio');
-        return res.json(usuario_comercio)
+        return res.json(usuario)
     }
-
+    
     //Función que guarda los datos ingresados en la tabla de usuario
     public async guardarUsuario(req:Request, res:Response)
     {

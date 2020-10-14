@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const rubro_controller_1 = require("../controllers/rubro.controller");
+let rubroController = new rubro_controller_1.RubroController();
+const enrutadorRubro = express_1.Router();
+enrutadorRubro.route('/rubro').get(rubroController.listaRubro);
+enrutadorRubro.route('/rubro').post(rubroController.guardarRubro);
+enrutadorRubro.route('/rubro/:id').delete(rubroController.eliminarRubro);
+enrutadorRubro.route('/rubro/:id').put(rubroController.actualizaRubro);
+enrutadorRubro.route('/rubro/:id').get(rubroController.obtenerUnRubro);
+exports.default = enrutadorRubro;
