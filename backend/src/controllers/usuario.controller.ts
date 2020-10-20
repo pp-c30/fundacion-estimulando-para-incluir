@@ -32,7 +32,7 @@ export class UsuarioController
     {
         const db = await conexion();
         let id = req.params.id;
-        await db.query("delete from usuario_comercio where id = ?",[id]);
+        await db.query("delete from usuario_comercio where idUsuario = ?",[id]);
         return res.json('El usuario fue eliminado exitosamente');
     }
 
@@ -42,7 +42,7 @@ export class UsuarioController
         const db = await conexion();
         let id = req.params.id;
         let nuevos_datos_usuario = req.body;
-        await db.query("update usuario_comercio set ? where id = ?",[nuevos_datos_usuario,id]);
+        await db.query("update usuario_comercio set ? where idUsuario = ?",[nuevos_datos_usuario,id]);
         return res.json('Los datos de usuario fueron actualizados exitosamente');
     }
 
@@ -52,7 +52,7 @@ export class UsuarioController
         const db = await conexion();
         let id = req.params.id;
         let nuevos_datos_usuario = req.body;
-        let unUsuario = await db.query("select * from usuario_comercio where id = ?",[id]);
+        let unUsuario = await db.query("select * from usuario_comercio where idUsuario = ?",[id]);
         return res.json(unUsuario[0]);
     }
 }

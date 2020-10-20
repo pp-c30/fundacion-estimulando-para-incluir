@@ -36,7 +36,7 @@ class UsuarioController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             let id = req.params.id;
-            yield db.query("delete from usuario_comercio where id = ?", [id]);
+            yield db.query("delete from usuario_comercio where idUsuario = ?", [id]);
             return res.json('El usuario fue eliminado exitosamente');
         });
     }
@@ -46,7 +46,7 @@ class UsuarioController {
             const db = yield database_1.conexion();
             let id = req.params.id;
             let nuevos_datos_usuario = req.body;
-            yield db.query("update usuario_comercio set ? where id = ?", [nuevos_datos_usuario, id]);
+            yield db.query("update usuario_comercio set ? where idUsuario = ?", [nuevos_datos_usuario, id]);
             return res.json('Los datos de usuario fueron actualizados exitosamente');
         });
     }
@@ -56,7 +56,7 @@ class UsuarioController {
             const db = yield database_1.conexion();
             let id = req.params.id;
             let nuevos_datos_usuario = req.body;
-            let unUsuario = yield db.query("select * from usuario_comercio where id = ?", [id]);
+            let unUsuario = yield db.query("select * from usuario_comercio where idUsuario = ?", [id]);
             return res.json(unUsuario[0]);
         });
     }
