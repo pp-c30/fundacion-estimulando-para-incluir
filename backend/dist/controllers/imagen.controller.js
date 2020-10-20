@@ -70,7 +70,7 @@ class ImagenController {
             //Guardo en id el id del elemento a obtener
             let id = req.params.id;
             //Ejecuto el query para obtener la imagen correspondiente
-            let imagen = yield db.query('SELECT * FROM imagen WHERE idImagen=?', [id]);
+            let imagen = yield db.query('SELECT * FROM imagenes_producto WHERE idImagen=?', [id]);
             //Muestro la imagen obtenida
             res.json(imagen);
         });

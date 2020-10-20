@@ -82,7 +82,7 @@ export class ImagenController {
         let id = req.params.id;
 
         //Ejecuto el query para obtener la imagen correspondiente
-        let imagen = await db.query('SELECT * FROM imagen WHERE idImagen=?',[id]);
+        let imagen = await db.query('SELECT * FROM imagenes_producto WHERE idImagen=?',[id]);
 
         //Muestro la imagen obtenida
         res.json(imagen);
