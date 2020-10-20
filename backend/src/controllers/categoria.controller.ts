@@ -29,7 +29,7 @@ export class CategoriaController
     {
         const db = await conexion();
         let id = req.params.id;
-        await db.query("delete from categoria where id = ?",[id]);
+        await db.query("delete from categoria where idCategoria = ?",[id]);
         return res.json('La categoria fue eliminada exitosamente');
     }
 
@@ -39,7 +39,7 @@ export class CategoriaController
         let id = req.params.id;
         let nuevos_datos_categoria = req.body;
 
-        await db.query("update categoria set ? where id = ?",[nuevos_datos_categoria,id]);
+        await db.query("update categoria set ? where idCategoria = ?",[nuevos_datos_categoria,id]);
         return res.json('La categoria fue actualizada exitosamente');
     }
 
@@ -49,7 +49,7 @@ export class CategoriaController
         let id = req.params.id;
         let nuevos_datos_categoria = req.body;
 
-        let unaCategoria = await db.query("select * from categoria where id = ?",[id]);
+        let unaCategoria = await db.query("select * from categoria where idCategoria = ?",[id]);
         return res.json(unaCategoria[0]);
     }
 

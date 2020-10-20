@@ -31,7 +31,7 @@ class CategoriaController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             let id = req.params.id;
-            yield db.query("delete from categoria where id = ?", [id]);
+            yield db.query("delete from categoria where idCategoria = ?", [id]);
             return res.json('La categoria fue eliminada exitosamente');
         });
     }
@@ -40,7 +40,7 @@ class CategoriaController {
             const db = yield database_1.conexion();
             let id = req.params.id;
             let nuevos_datos_categoria = req.body;
-            yield db.query("update categoria set ? where id = ?", [nuevos_datos_categoria, id]);
+            yield db.query("update categoria set ? where idCategoria = ?", [nuevos_datos_categoria, id]);
             return res.json('La categoria fue actualizada exitosamente');
         });
     }
@@ -49,7 +49,7 @@ class CategoriaController {
             const db = yield database_1.conexion();
             let id = req.params.id;
             let nuevos_datos_categoria = req.body;
-            let unaCategoria = yield db.query("select * from categoria where id = ?", [id]);
+            let unaCategoria = yield db.query("select * from categoria where idCategoria = ?", [id]);
             return res.json(unaCategoria[0]);
         });
     }
