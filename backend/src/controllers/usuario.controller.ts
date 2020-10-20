@@ -23,7 +23,7 @@ export class UsuarioController
     {
         const db = await conexion();
         const usuario:IUsuario = req.body;
-        await db.query("Insert into usuario_comercio set?",[usuario]);
+        await db.query("insert into usuario_comercio set ?",[usuario]);
         return res.json('El usuario fue guardado exitosamente');
     }
 

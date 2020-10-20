@@ -27,7 +27,7 @@ class UsuarioController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             const usuario = req.body;
-            yield db.query("Insert into usuario_comercio set?", [usuario]);
+            yield db.query("insert into usuario_comercio set ?", [usuario]);
             return res.json('El usuario fue guardado exitosamente');
         });
     }
