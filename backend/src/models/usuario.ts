@@ -6,7 +6,7 @@ export interface IUsuario
     nombreUsuario: string;
     localidad: string;
     provincia: string;
-    dirección: string;
+    direccion: string;
     codigoPostal: number;
     idRubro: number;
 }

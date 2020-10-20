@@ -6,12 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Server = void 0;
 const express_1 = __importDefault(require("express"));
 const index_routes_1 = __importDefault(require("./routes/index.routes"));
-//import enrutadorUsuario from "./routes/usuario.routes";
 const categoria_routes_1 = __importDefault(require("./routes/categoria.routes"));
 const rubro_routes_1 = __importDefault(require("./routes/rubro.routes"));
 const producto_routes_1 = __importDefault(require("./routes/producto.routes"));
 //Importo body-parser para posibles errores de JSON
 const body_parser_1 = __importDefault(require("body-parser"));
+const usuario_routes_1 = __importDefault(require("./routes/usuario.routes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -28,6 +28,7 @@ class Server {
         this.app.use(categoria_routes_1.default);
         this.app.use(rubro_routes_1.default);
         this.app.use(producto_routes_1.default);
+        this.app.use(usuario_routes_1.default);
     }
     middleware() {
         this.app.use(express_1.default.json());
