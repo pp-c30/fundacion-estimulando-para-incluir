@@ -31,7 +31,7 @@ class RubroController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             let id = req.params.id;
-            yield db.query("delete from rubro where id = ?", [id]);
+            yield db.query("delete from rubro where idRubro = ?", [id]);
             return res.json('El rubro fue eliminado exitosamente');
         });
     }
@@ -40,7 +40,7 @@ class RubroController {
             const db = yield database_1.conexion();
             let id = req.params.id;
             let nuevos_datos_rubro = req.body;
-            yield db.query("update rubro set ? where id = ?", [nuevos_datos_rubro, id]);
+            yield db.query("update rubro set ? where idRubro = ?", [nuevos_datos_rubro, id]);
             return res.json('El rubro fue actualizado exitosamente');
         });
     }
@@ -48,8 +48,7 @@ class RubroController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             let id = req.params.id;
-            let nuevos_datos_rubro = req.body;
-            let unRubro = yield db.query("select * from rubro where id = ?", [id]);
+            let unRubro = yield db.query("select * from rubro where idRubro = ?", [id]);
             return res.json(unRubro[0]);
         });
     }
