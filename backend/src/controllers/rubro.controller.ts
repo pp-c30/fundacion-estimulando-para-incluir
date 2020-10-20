@@ -29,7 +29,7 @@ export class RubroController
     {
         const db = await conexion();
         let id = req.params.id;
-        await db.query("delete from rubro where id = ?",[id]);
+        await db.query("delete from rubro where idRubro = ?",[id]);
         return res.json('El rubro fue eliminado exitosamente');
     }
 
@@ -39,7 +39,7 @@ export class RubroController
         let id = req.params.id;
         let nuevos_datos_rubro = req.body;
 
-        await db.query("update rubro set ? where id = ?",[nuevos_datos_rubro,id]);
+        await db.query("update rubro set ? where idRubro = ?",[nuevos_datos_rubro,id]);
         return res.json('El rubro fue actualizado exitosamente');
     }
 
@@ -47,9 +47,8 @@ export class RubroController
     {
         const db = await conexion();
         let id = req.params.id;
-        let nuevos_datos_rubro = req.body;
 
-        let unRubro = await db.query("select * from rubro where id = ?",[id]);
+        let unRubro = await db.query("select * from rubro where idRubro = ?",[id]);
         return res.json(unRubro[0]);
     }
 
