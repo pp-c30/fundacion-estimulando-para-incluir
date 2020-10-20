@@ -1,7 +1,7 @@
 import express,{Application} from "express";
 import enrutadorIndex from "./routes/index.routes";
 
-
+import enrutadorImagen from "./routes/imagen.routes";
 import enrutadorCategoria from "./routes/categoria.routes";
 import enrutadorRubro from "./routes/rubro.routes";
 
@@ -33,6 +33,7 @@ export class Server {
         this.app.use(enrutadorRubro);
         this.app.use(enrutadorProducto);
         this.app.use(enrutadorUsuario);
+        this.app.use(enrutadorImagen);
     }
 
     middleware(){

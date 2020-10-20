@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Server = void 0;
 const express_1 = __importDefault(require("express"));
 const index_routes_1 = __importDefault(require("./routes/index.routes"));
+const imagen_routes_1 = __importDefault(require("./routes/imagen.routes"));
 const categoria_routes_1 = __importDefault(require("./routes/categoria.routes"));
 const rubro_routes_1 = __importDefault(require("./routes/rubro.routes"));
 const producto_routes_1 = __importDefault(require("./routes/producto.routes"));
@@ -29,6 +30,7 @@ class Server {
         this.app.use(rubro_routes_1.default);
         this.app.use(producto_routes_1.default);
         this.app.use(usuario_routes_1.default);
+        this.app.use(imagen_routes_1.default);
     }
     middleware() {
         this.app.use(express_1.default.json());
