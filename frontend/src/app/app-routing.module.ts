@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'escaneo',
     loadChildren: () => import('./escaneo/escaneo.module').then( m => m.EscaneoPageModule)
+  },  {
+    path: 'misdatos',
+    loadChildren: () => import('./misdatos/misdatos.module').then( m => m.MisdatosPageModule)
   },
+
 ];
 
 @NgModule({
