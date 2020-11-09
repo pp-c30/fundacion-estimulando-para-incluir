@@ -22,6 +22,14 @@ const routes: Routes = [
     path: 'misdatos',
     loadChildren: () => import('./misdatos/misdatos.module').then( m => m.MisdatosPageModule)
   },
+  {
+    path: 'inicio',
+    loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
+  },
+  {
+    path: 'imagen',
+    loadChildren: () => import('./imagen/imagen.module').then( m => m.ImagenPageModule)
+  },
 
 ];
 
