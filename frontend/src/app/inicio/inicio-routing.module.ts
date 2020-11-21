@@ -11,11 +11,11 @@ const routes: Routes = [
   {
     path: 'mis-datos',
     loadChildren: () => import('./mis-datos/mis-datos.module').then( m => m.MisDatosPageModule)
+  },  {
+    path: 'categorias-comercio',
+    loadChildren: () => import('./categorias-comercio/categorias-comercio.module').then( m => m.CategoriasComercioPageModule)
   },
-  {
-    path: 'categorias',
-    loadChildren: () => import('./categorias/categorias.module').then( m => m.CategoriasPageModule)
-  }
+
 ];
 
 @NgModule({
