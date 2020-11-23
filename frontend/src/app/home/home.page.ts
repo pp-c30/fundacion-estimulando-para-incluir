@@ -17,8 +17,10 @@ export class HomePage {
   cambio(event) {
     if (event.detail.checked) {
       document.body.setAttribute('color-theme', 'dark');
+      document.getElementById("tema").setAttribute('name', 'moon');
     } else {
       document.body.setAttribute('color-theme', 'light');
+      document.getElementById("tema").setAttribute('name', 'sunny-outline');
     }
   }
 

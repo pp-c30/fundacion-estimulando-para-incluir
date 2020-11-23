@@ -1,6 +1,7 @@
 import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
 import { ToastController, LoadingController, Platform } from '@ionic/angular';
 import jsQR from 'jsqr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-escaneo',
@@ -20,6 +21,7 @@ export class EscaneoPage implements OnInit {
   loading: HTMLIonLoadingElement = null;
 
   constructor(
+    private route:Router,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
     private plt: Platform
@@ -40,7 +42,8 @@ export class EscaneoPage implements OnInit {
  
   // Helper functions
   async showQrToast() {
-    window.location.replace(this.scanResult/*, '_system', 'location=yes'*/);
+    this.route.navigate(['/', this.scanResult]);
+    //window.location.replace(this.scanResult/*, '_system', 'location=yes'*/);
     /*const toast = await this.toastCtrl.create({
       message: `Open ${this.scanResult}?`,
       position: 'top',

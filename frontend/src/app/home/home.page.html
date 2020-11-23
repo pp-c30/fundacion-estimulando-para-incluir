@@ -8,12 +8,23 @@
 
 <ion-content [fullscreen]="true">
 
-    <ion-list>
-      <ion-item>
-        <ion-icon slot="start" name="moon"></ion-icon>
-        <ion-label>Tema oscuro</ion-label>
-        <ion-toggle slot="end" [ngModel]="temaOscuro" (ionChange)="cambio($event)"></ion-toggle>
-      </ion-item>
-    </ion-list>
-  
+  <ion-list>
+    <ion-item>
+      <ion-icon id="tema" slot="start" name="moon"></ion-icon>
+      <ion-label>Tema oscuro</ion-label>
+      <ion-toggle slot="end" [ngModel]="temaOscuro" (ionChange)="cambio($event)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <ion-col size="6">
+      <ion-button expand="full" class="cuadrado" routerLink="/escaneo">
+        <ion-icon size="large" name="qr-code-sharp"></ion-icon>
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="full" class="cuadrado" routerLink="/login">
+        <ion-icon size="large" name="person-outline"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-content>
