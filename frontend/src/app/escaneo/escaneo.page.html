@@ -8,9 +8,8 @@
   <!-- Fallback for iOS PWA -->
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
  
-  <ion-button expand="full" (click)="startScan()">
-    <ion-icon slot="start" name="qr-scanner"></ion-icon>
-    Start scan
+  <ion-button class="boton" expand="full" (click)="startScan()">
+    <ion-icon size="large" slot="start" name="qr-code-outline"></ion-icon>
   </ion-button>
  
   <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
@@ -25,9 +24,8 @@
   <canvas #canvas hidden></canvas>
  
   <!-- Stop our scanner preview if active -->
-  <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
-    <ion-icon slot="start" name="close"></ion-icon>
-    Stop scan
+  <ion-button class="boton" expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+    <ion-icon size="large" name="close"></ion-icon>
   </ion-button>
  
   <ion-card *ngIf="scanResult">

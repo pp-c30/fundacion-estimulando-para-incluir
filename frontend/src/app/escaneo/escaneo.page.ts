@@ -40,19 +40,20 @@ export class EscaneoPage implements OnInit {
  
   // Helper functions
   async showQrToast() {
-    const toast = await this.toastCtrl.create({
+    window.location.replace(this.scanResult/*, '_system', 'location=yes'*/);
+    /*const toast = await this.toastCtrl.create({
       message: `Open ${this.scanResult}?`,
       position: 'top',
       buttons: [
         {
           text: 'Open',
           handler: () => {
-            window.location.replace(this.scanResult/*, '_system', 'location=yes'*/);
+            window.location.replace(this.scanResult/*, '_system', 'location=yes');
           }
         }
       ]
     });
-    toast.present();
+    toast.present();*/
   }
  
   reset() {
