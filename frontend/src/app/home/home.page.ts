@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  temaOscuro: boolean;
+
+  constructor() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.temaOscuro = prefersDark.matches;
+  }
+
+  cambio(event) {
+    if (event.detail.checked) {
+      document.body.setAttribute('color-theme', 'dark');
+    } else {
+      document.body.setAttribute('color-theme', 'light');
+    }
+  }
 
 }
