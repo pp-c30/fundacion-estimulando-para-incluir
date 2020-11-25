@@ -1,9 +1,46 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>producto-comercio</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content  [translucent]="true">
+  <ion-icon size="large" name="arrow-back-outline" routerLink="/productos"></ion-icon>
+<ion-grid>
+  <ion-row>
+    <ion-col class="ion-align-self-center">
+      <ion-item>
+        <ion-label position="floating">Nombre del producto</ion-label>
+        <ion-input></ion-input>
+      </ion-item> <br>
+      <ion-item>
+        <ion-label position="floating" type="number">Precio del producto</ion-label>
+        <ion-input></ion-input>
+      </ion-item> <br>
+      <!--ion-select single selection-->
+      <ion-list>
+        <ion-item>
+          <ion-label>Categoría</ion-label>
+          <ion-select okText="Aceptar" cancelText="Cancelar">
+            <ion-select-option value="brown">Comercio</ion-select-option>
+            <ion-select-option value="blonde">Ferretería</ion-select-option>
+            <ion-select-option value="black">Farmacia</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list><br>
+      <!-- Expand -->
+      <ion-button expand="block" routerLink="/imagen">Añadir imagen</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-icon name="close" class="icon"></ion-icon>
+    </ion-col>
+    <ion-col>
+      <ion-icon name="checkmark" class="icons"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
