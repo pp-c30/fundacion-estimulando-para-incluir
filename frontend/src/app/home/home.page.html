@@ -5,9 +5,16 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<br>
 <ion-content [fullscreen]="true">
-
+  <div style="display: flex; justify-content: center;">
+    <ion-avatar>
+      <img src="assets/img/logofei.jpg">
+    </ion-avatar>
+  </div>
+  <div style="text-align: center">
+    <h4>Fundación Estimulando para Incluir</h4>
+  </div>
   <ion-list>
     <ion-item>
       <ion-icon id="tema" slot="start" name="moon"></ion-icon>
@@ -17,13 +24,13 @@
   </ion-list>
   <ion-row>
     <ion-col size="6">
-      <ion-button expand="full" class="cuadrado" routerLink="/escaneo">
+      <ion-button expand="block" class="cuadrado" routerLink="/escaneo">
         <ion-icon size="large" name="qr-code-sharp"></ion-icon>
       </ion-button>
     </ion-col>
     <ion-col size="6">
-      <ion-button expand="full" class="cuadrado" routerLink="/login">
-        <ion-icon size="large" name="person-outline"></ion-icon>
+      <ion-button expand="block" class="cuadrado" routerLink="/login">
+        <ion-icon size="large" name="person"></ion-icon>
       </ion-button>
     </ion-col>
   </ion-row>
