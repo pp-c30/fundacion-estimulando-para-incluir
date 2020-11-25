@@ -1,34 +1,36 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
-<ion-grid>
-  <ion-row>
-    Acá iría el logo de fei
-  </ion-row>
-  <br>
-  <ion-row>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <div style="display: flex; justify-content: center;">
+      <ion-avatar>
+        <img src="assets/img/logofei.jpg">
+      </ion-avatar>
+    </div>
+    <div style="text-align: center">
+      <h4>Fundación Estimulando para Incluir</h4>
+    </div>
+    <br>
+    <br>
     <ion-item> 
       <ion-label position="floating">Correo electrónico</ion-label>
       <ion-input></ion-input>
     </ion-item>
-  </ion-row>
-  <br>
-  <ion-row>
+    <br>
     <ion-item> 
       <ion-label position="floating">Contraseña</ion-label>
       <ion-input type="password"></ion-input>
     </ion-item>
-  </ion-row>
-  <br>
-  <ion-row>
-    <ion-button fill="solid" size="default">Ingresar</ion-button>
-  </ion-row>
-  <br>
-  <h5>¿No tenés una cuenta?</h5>
-  <ion-row >
-    <ion-button fill="clear" size="default">Registrate</ion-button>
-  </ion-row>
-</ion-grid>
+    <br>
+    <ion-button expand="block" fill="solid" size="default" routerLink="/inicio">Ingresar</ion-button>
+    <br>
+    <div style="text-align: center">
+      <h5>¿No tenés una cuenta?</h5>
+    </div>
+    <ion-button expand="block" fill="clear" size="default" routerLink="/registro1">Registrate</ion-button>
+  </ion-grid>
+</ion-content>

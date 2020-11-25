@@ -1,10 +1,16 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>escaneo</ion-title>
+    <ion-title>Escaneo</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
+<br>
+<ion-content [fullscreen]="true">
+  <div style="display: flex; justify-content: center;">
+    <ion-avatar>
+      <img src="assets/img/logofei.jpg">
+    </ion-avatar>
+  </div>
+  <br>
   <!-- Fallback for iOS PWA -->
   <input #fileinput type="file" accept="image/*;capture=camera" hidden (change)="handleFile($event.target.files)">
  
