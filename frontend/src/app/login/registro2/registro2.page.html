@@ -1,46 +1,46 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Registro 2/2</ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
-<ion-grid>
-  <ion-row>
-    <ion-item> 
-      <ion-label position="default">Nombre del local</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-row>
-  <br>
-  <ion-row>
-    <ion-item> 
-      <ion-label position="default">Provincia</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-row>
-  <br>
-  <ion-row>
-    <ion-item> 
-      <ion-label position="default">Localidad</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-row>
-  <br>
-  <ion-row>
-    <ion-item> 
-      <ion-label position="default">Dirección</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-row>
-  <br>
-  <ion-row>
-    <ion-item> 
-      <ion-label position="default">Tipo de local</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-  </ion-row>
-  <br>
-  <ion-row >
-    <ion-button fill="solid" size="default">Registrar</ion-button>
-  </ion-row>
-</ion-grid>
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <div style="display: flex; justify-content: center;">
+      <ion-avatar>
+        <img src="assets/img/logofei.jpg">
+      </ion-avatar>
+    </div>
+    <br>
+    <br>
+      <ion-item> 
+        <ion-label position="floating">Nombre del local</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <br>
+
+      <ion-item> 
+        <ion-label position="floating">Provincia</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <br>
+      <ion-item> 
+        <ion-label position="floating">Localidad</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <br>
+      <ion-item> 
+        <ion-label position="floating">Dirección</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <br>
+      <ion-item> 
+        <ion-label position="floating">Tipo de local</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <br>
+    <div>
+      <ion-button expand="block" fill="solid" size="default">Registrar</ion-button>
+    </div>
+  </ion-grid>
+</ion-content>
