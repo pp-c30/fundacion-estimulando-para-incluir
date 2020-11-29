@@ -1,9 +1,45 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>misDatos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="j">Mis Datos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true" class="x">
+  <ion-list>
 
+    <ion-item>
+      <ion-label position="floating">Nombre local</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Provincia</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Localidad</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Direccion</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Tipo Local</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <br>
+  <br>
+  <ion-button color="secondary">Guardar</ion-button>
+
+  
 </ion-content>
