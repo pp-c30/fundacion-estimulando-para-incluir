@@ -9,12 +9,13 @@
 <ion-content [fullscreen]="true">
   <div style="display: flex; justify-content: center;">
     <ion-avatar>
-      <img src="assets/img/logofei.jpg">
+      <img src="assets/img/logofeisinfondo.png">
     </ion-avatar>
   </div>
   <div style="text-align: center">
     <h4>Fundación Estimulando para Incluir</h4>
   </div>
+  <ion-item-divider></ion-item-divider>
   <ion-list>
     <ion-item>
       <ion-icon id="tema" slot="start" name="moon"></ion-icon>
@@ -22,16 +23,23 @@
       <ion-toggle slot="end" [ngModel]="temaOscuro" (ionChange)="cambio($event)"></ion-toggle>
     </ion-item>
   </ion-list>
-  <ion-row>
-    <ion-col size="6">
-      <ion-button expand="block" class="cuadrado" routerLink="/escaneo">
-        <ion-icon size="large" name="qr-code-sharp"></ion-icon>
-      </ion-button>
-    </ion-col>
-    <ion-col size="6">
-      <ion-button expand="block" class="cuadrado" routerLink="/login">
-        <ion-icon size="large" name="person"></ion-icon>
-      </ion-button>
-    </ion-col>
-  </ion-row>
+  <br>
+  <ion-button expand="block" class="cuadrado" routerLink="/login">
+    <img src="https://img.icons8.com/bubbles/100/000000/gender-neutral-user.png"/>
+  </ion-button>
+  <br>
+  <ion-button expand="block" class="cuadrado" routerLink="/escaneo">
+    <img src="https://img.icons8.com/bubbles/100/000000/qr-code.png"/>
+  </ion-button>
+  <ion-item-divider></ion-item-divider>
+  <br>
+  <div style="text-align: center">
+    <h6>Aplicación creada sin ánimos de lucro, como proyecto final.
+      <br>
+      Equipo de FEI Soft, C.E.T. Nº 30
+      <br>
+      <br>
+      Cipolletti, Río Negro, Argentina
+    </h6>
+  </div>
 </ion-content>
