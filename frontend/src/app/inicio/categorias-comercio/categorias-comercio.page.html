@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="titulo">
       Mi comercio (Categorias)
     </ion-title>
   </ion-toolbar>
@@ -12,9 +15,40 @@
       <img src="assets/img/logofeisinfondo.png">
     </ion-avatar>
   </div>
-  <ion-grid>
+  <br>
+  <ion-grid class="x">
     <ion-row>
+
+      <ion-col>
+        <ion-button expand="block" class="cuadrado" routerLink="/categorias-comercio">
+          <img src="assets/img/categoria-comercio3.png"/>
+        </ion-button>
+        <ion-text>Nombre</ion-text>
+        <br>
+        <br>
+        <ion-button expand="block" class="cuadrado" routerLink="/categorias-comercio">
+          <img src="assets/img/categoria-comercio2.png"/>
+        </ion-button>
+        <ion-text>Nombre</ion-text>
+        <br>
+      </ion-col>
+
       
-    </ion-row>
+      <ion-col>
+        <ion-button expand="block" class="cuadrado" routerLink="/categorias-comercio">
+          <img src="assets/img/categoria-comercio1.png"/>
+        </ion-button>
+        <ion-text>Nombre</ion-text>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+          <ion-button>
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+      </ion-col>
+
+      </ion-row>
   </ion-grid>
 <ion-content>
