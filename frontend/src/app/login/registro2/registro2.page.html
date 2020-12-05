@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Registro 2/2</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="j">Registro 2/2</ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
@@ -19,10 +22,36 @@
       </ion-item>
     <br>
 
-      <ion-item> 
-        <ion-label position="floating">Provincia</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
+    <ion-item>
+      <ion-label>Provincia</ion-label>
+      <ion-select [(ngModel)]="Provincia" cancelText="Cancelar" okText="Seleccionar">
+        <ion-select-option value="a">Buenos Aires</ion-select-option>
+        <ion-select-option value="b">Catamarca</ion-select-option>
+        <ion-select-option value="c">Chaco</ion-select-option>
+        <ion-select-option value="d">Chubut</ion-select-option>
+        <ion-select-option value="e">Ciudad de Buenos aires</ion-select-option>
+        <ion-select-option value="f">Cordoba</ion-select-option>
+        <ion-select-option value="g">Corrientes</ion-select-option>
+        <ion-select-option value="h">Entre Rios</ion-select-option>
+        <ion-select-option value="i">Formosa</ion-select-option>
+        <ion-select-option value="j">Islas Malvinas</ion-select-option>
+        <ion-select-option value="k">Jujuy</ion-select-option>
+        <ion-select-option value="l">La pampa</ion-select-option>
+        <ion-select-option value="m">La Rioja</ion-select-option>
+        <ion-select-option value="n">Mendoza</ion-select-option>
+        <ion-select-option value="o">Misiones</ion-select-option>
+        <ion-select-option value="p">Neuquen</ion-select-option>
+        <ion-select-option value="q">Rio Negro</ion-select-option>
+        <ion-select-option value="r">Salta</ion-select-option>
+        <ion-select-option value="s">San Juan</ion-select-option>
+        <ion-select-option value="t">San Luis</ion-select-option>
+        <ion-select-option value="u">Santa Fe</ion-select-option>
+        <ion-select-option value="v">Santiago del Estero</ion-select-option>
+        <ion-select-option value="w">Tierra del fuego</ion-select-option>
+        <ion-select-option value="x">Tucuman</ion-select-option>
+      </ion-select>
+    </ion-item>
+
     <br>
       <ion-item> 
         <ion-label position="floating">Localidad</ion-label>
@@ -34,10 +63,17 @@
         <ion-input></ion-input>
       </ion-item>
     <br>
-      <ion-item> 
-        <ion-label position="floating">Tipo de local</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
+ 
+    <ion-item>
+      <ion-label>Tipo de Local</ion-label>
+      <ion-select [(ngModel)]="Tipo_de_Local" cancelText="Cancelar" okText="Seleccionar">
+        <ion-select-option value="local1">Local para llevar</ion-select-option>
+        <ion-select-option value="local2">Local Familiar</ion-select-option>
+        <ion-select-option value="local3">Local Comida Rapida</ion-select-option>
+        <ion-select-option value="local4">Local Buffet</ion-select-option>
+      </ion-select>
+    </ion-item>
+
     <br>
     <div>
       <ion-button expand="block" fill="solid" size="default">Registrar</ion-button>
