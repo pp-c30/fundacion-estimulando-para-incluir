@@ -14,5 +14,7 @@ enrutadorProducto.route('/productos').post(productoController.agregarProducto);
 enrutadorProducto.route('/productos/:id').delete(productoController.eliminarProducto);
 enrutadorProducto.route('/productos/:id').put(productoController.actualizarProducto);
 enrutadorProducto.route('/productos/:id').get(productoController.obtenerUnProducto);
+// Ruta para obtener productos segun la categoria
+enrutadorProducto.route('/:id/productos').get(productoController.obtenerProductosCategoria);
 //Exporto las rutas
 exports.default = enrutadorProducto;

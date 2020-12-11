@@ -53,5 +53,13 @@ class CategoriaController {
             return res.json(unaCategoria[0]);
         });
     }
+    obtenerCategoriasUsuario(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const db = yield database_1.conexion();
+            let idUsuario = req.params.id;
+            let categorias = yield db.query("select * from categoria where idComercio = ?", [idUsuario]);
+            return res.json(categorias);
+        });
+    }
 }
 exports.CategoriaController = CategoriaController;

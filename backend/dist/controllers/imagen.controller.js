@@ -75,5 +75,13 @@ class ImagenController {
             res.json(imagen);
         });
     }
+    obtenerImagenesProducto(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const db = yield database_1.conexion();
+            let id = req.params.id;
+            let imagenes = yield db.query('SELECT url FROM imagenes_producto WHERE idProducto = ?', [id]);
+            res.json(imagenes);
+        });
+    }
 }
 exports.ImagenController = ImagenController;
