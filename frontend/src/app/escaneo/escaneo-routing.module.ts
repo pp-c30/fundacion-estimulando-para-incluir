@@ -6,11 +6,16 @@ import { EscaneoPage } from './escaneo.page';
 const routes: Routes = [
   {
     path: '',
-    component: EscaneoPage
-  },
-  {
-    path: 'categorias',
-    loadChildren: () => import('./categorias/categorias.module').then( m => m.CategoriasPageModule)
+    children: [
+      {
+        path: '',
+        component: EscaneoPage
+      },
+      {
+        path: ':idUsuario',
+        loadChildren: () => import('./categorias/categorias.module').then( m => m.CategoriasPageModule)
+      }
+    ]
   }
 ];
 
