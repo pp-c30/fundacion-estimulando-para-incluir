@@ -1,7 +1,7 @@
 export interface IProducto {
     id?: number;
     nombreProducto: string;
-    descripcion: string;
+    precio: number;
     idComercio: number;
     idCategoria: number;
 }

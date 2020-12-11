@@ -89,4 +89,11 @@ export class ProductoController {
 
     }
 
+    public async obtenerProductosCategoria(req:Request, res:Response) {
+        const db = await conexion();
+        let idCategoria = req.params.id;
+        let productos = await db.query('SELECT id,precio FROM producto WHERE idCategoria = ?',[idCategoria]);
+        res.json(productos);
+    }
+
 }

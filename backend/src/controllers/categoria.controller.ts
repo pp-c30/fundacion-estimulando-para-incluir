@@ -53,4 +53,11 @@ export class CategoriaController
         return res.json(unaCategoria[0]);
     }
 
+    public async obtenerCategoriasUsuario(req: Request, res: Response) {
+        const db = await conexion();
+        let idUsuario = req.params.id;
+        let categorias = await db.query("select * from categoria where idComercio = ?",[idUsuario]);
+        return res.json(categorias);
+    }
+
 }  

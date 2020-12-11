@@ -89,4 +89,11 @@ export class ImagenController {
 
     }
 
+    public async obtenerImagenesProducto(req:Request, res:Response) {
+        const db = await conexion();
+        let id = req.params.id;
+        let imagenes = await db.query('SELECT url FROM imagenes_producto WHERE idProducto = ?',[id]);
+        res.json(imagenes);
+    }
+
 }
