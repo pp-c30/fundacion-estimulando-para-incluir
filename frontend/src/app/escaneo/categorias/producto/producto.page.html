@@ -4,21 +4,16 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
   <ion-row size="6">
-    <ion-col size="6">
+    <ion-col *ngFor="let imagen of imagenes" size="6">
       <ion-button class="cuadrado">
-        <ion-img src="https://static.arasaac.org/pictograms/{{imagenes[valor]}}/{{imagenes[valor]}}_2500.png"></ion-img>
-      </ion-button>
-    </ion-col>
-    <ion-col size="6">
-      <ion-button class="cuadrado">
-        <ion-img src="https://static.arasaac.org/pictograms/{{imagenes[valor+1]}}/{{imagenes[valor+1]}}_2500.png"></ion-img>
+        <ion-img src="https://static.arasaac.org/pictograms/{{imagen.url}}/{{imagen.url}}_2500.png"></ion-img>
       </ion-button>
     </ion-col>
   </ion-row>
   <ion-row size="6">
-    <ion-col class="ion-text-center precio">${{precios[valor]}}</ion-col>
+    <ion-col class="ion-text-center precio">${{productos[valor].precio}}</ion-col>
   </ion-row>
   <ion-row size="6">
     <ion-col>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { CategoriaService } from "../../servicios/categoria.service";
+
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.page.html',
@@ -8,7 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CategoriasPage implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  categorias:any = [];
+
+  constructor(private activatedRoute: ActivatedRoute, private servicioCategoria:CategoriaService) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -17,7 +21,15 @@ export class CategoriasPage implements OnInit {
         return;
       }
       const idUsuario = paramMap.get('idUsuario');
+      this.listarCategorias(idUsuario);
     });
+  }
+
+  listarCategorias(id) {
+    this.servicioCategoria.getCategoriasUsuario(id).subscribe(
+      resultado => this.categorias = resultado,
+      error => console.log(error)
+    )
   }
 
 }

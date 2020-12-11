@@ -42,7 +42,7 @@ export class EscaneoPage implements OnInit {
  
   // Helper functions
   async showQrToast() {
-    this.route.navigate(['/', this.scanResult]);
+    this.route.navigate(['/escaneo/', this.scanResult]);
     //window.location.replace(this.scanResult/*, '_system', 'location=yes'*/);
     /*const toast = await this.toastCtrl.create({
       message: `Open ${this.scanResult}?`,
