@@ -6,11 +6,16 @@ import { CategoriasPage } from './categorias.page';
 const routes: Routes = [
   {
     path: '',
-    component: CategoriasPage
-  },
-  {
-    path: ':idCategoria',
-    loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
+    children: [
+      {
+        path: '',
+        component: CategoriasPage
+      },
+      {
+        path: ':idCategoria',
+        loadChildren: () => import('./producto/producto.module').then( m => m.ProductoPageModule)
+      }
+    ]
   }
 ];
 

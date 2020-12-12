@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit ,ViewChild, ElementRef, NgZone } from '@angular/core';
 import { ToastController, LoadingController, Platform } from '@ionic/angular';
 import jsQR from 'jsqr';
 import { Router } from '@angular/router';
@@ -24,7 +24,8 @@ export class EscaneoPage implements OnInit {
     private route:Router,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private plt: Platform
+    private plt: Platform,
+    public zone:NgZone
   ) {
     const isInStandaloneMode = () =>
       'standalone' in window.navigator && window.navigator['standalone'];
@@ -42,21 +43,7 @@ export class EscaneoPage implements OnInit {
  
   // Helper functions
   async showQrToast() {
-    this.route.navigate(['/escaneo/', this.scanResult]);
-    //window.location.replace(this.scanResult/*, '_system', 'location=yes'*/);
-    /*const toast = await this.toastCtrl.create({
-      message: `Open ${this.scanResult}?`,
-      position: 'top',
-      buttons: [
-        {
-          text: 'Open',
-          handler: () => {
-            window.location.replace(this.scanResult/*, '_system', 'location=yes');
-          }
-        }
-      ]
-    });
-    toast.present();*/
+    this.route.navigate(['/escaneo/', this.scanResult, 'categorias']);
   }
  
   reset() {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { CategoriaService } from "../../servicios/categoria.service";
 
@@ -11,8 +11,9 @@ import { CategoriaService } from "../../servicios/categoria.service";
 export class CategoriasPage implements OnInit {
 
   categorias:any = [];
+  idUsuario;
 
-  constructor(private activatedRoute: ActivatedRoute, private servicioCategoria:CategoriaService) { }
+  constructor(private activatedRoute: ActivatedRoute, private servicioCategoria:CategoriaService, private route:Router) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -20,8 +21,8 @@ export class CategoriasPage implements OnInit {
         // redirect
         return;
       }
-      const idUsuario = paramMap.get('idUsuario');
-      this.listarCategorias(idUsuario);
+      this.idUsuario = paramMap.get('idUsuario');
+      this.listarCategorias(this.idUsuario);
     });
   }
 
@@ -30,6 +31,15 @@ export class CategoriasPage implements OnInit {
       resultado => this.categorias = resultado,
       error => console.log(error)
     )
+  }
+
+  redireccion(id) {
+    this.route.navigate(['/escaneo/', this.idUsuario,'categorias', id]);
+  }
+
+  remove() {
+    let selector = document.getElementsByTagName('app-categorias');
+    selector[0].remove();
   }
 
 }

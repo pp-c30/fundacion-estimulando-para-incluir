@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>categorias</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline" (click)="remove();" defaultHref="escaneo"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-row size="6">
     <ion-col size="6" *ngFor="let categoria of categorias">
-      <ion-button class="cuadrado" routerLink="{{categoria.idCategoria}}">
+      <ion-button class="cuadrado" (click)="redireccion(categoria.idCategoria);">
         <ion-img src="https://static.arasaac.org/pictograms/{{categoria.imagenCategoria}}/{{categoria.imagenCategoria}}_2500.png"></ion-img>
       </ion-button>
     </ion-col>
