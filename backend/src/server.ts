@@ -11,6 +11,8 @@ import enrutadorProducto from "./routes/producto.routes";
 import bodyParser from 'body-parser';
 import enrutadorUsuario from "./routes/usuario.routes";
 
+import enrutadorAut from "./routes/autenticacion.routes";
+
 export class Server {
     app:Application;
     constructor() 
@@ -34,6 +36,7 @@ export class Server {
         this.app.use(enrutadorProducto);
         this.app.use(enrutadorUsuario);
         this.app.use(enrutadorImagen);
+        this.app.use(enrutadorAut);
     }
 
     middleware(){

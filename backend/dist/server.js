@@ -13,6 +13,7 @@ const producto_routes_1 = __importDefault(require("./routes/producto.routes"));
 //Importo body-parser para posibles errores de JSON
 const body_parser_1 = __importDefault(require("body-parser"));
 const usuario_routes_1 = __importDefault(require("./routes/usuario.routes"));
+const autenticacion_routes_1 = __importDefault(require("./routes/autenticacion.routes"));
 class Server {
     constructor() {
         this.app = express_1.default();
@@ -31,6 +32,7 @@ class Server {
         this.app.use(producto_routes_1.default);
         this.app.use(usuario_routes_1.default);
         this.app.use(imagen_routes_1.default);
+        this.app.use(autenticacion_routes_1.default);
     }
     middleware() {
         this.app.use(express_1.default.json());
