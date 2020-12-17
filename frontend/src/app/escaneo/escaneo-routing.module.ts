@@ -12,7 +12,7 @@ const routes: Routes = [
         component: EscaneoPage
       },
       {
-        path: ':idUsuario',
+        path: ':idUsuario/categorias',
         loadChildren: () => import('./categorias/categorias.module').then( m => m.CategoriasPageModule)
       }
     ]

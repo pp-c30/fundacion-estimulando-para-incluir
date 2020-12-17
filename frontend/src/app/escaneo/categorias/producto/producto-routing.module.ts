@@ -6,7 +6,12 @@ import { ProductoPage } from './producto.page';
 const routes: Routes = [
   {
     path: '',
-    component: ProductoPage
+    children: [
+      {
+        path: '',
+        component: ProductoPage
+      }
+    ]
   }
 ];
 

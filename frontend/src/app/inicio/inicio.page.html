@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="arrow-back-outline" defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Inicio (Usuario)</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -30,7 +33,7 @@
       <img src="https://img.icons8.com/bubbles/100/000000/shop--v2.png"/>
     </ion-button>
     <br>
-    <ion-button expand="block" class="cuadrado" routerLink="">
+    <ion-button expand="block" class="cuadrado" (click)="generatePdf();">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
         width="100" height="100"
         viewBox="0 0 172 172"
