@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button text="" icon="arrow-back-outline"></ion-back-button>
     </ion-buttons>
-    <ion-title class="j">Registro 1/2</ion-title>
+    <ion-title class="j">Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
@@ -18,26 +18,66 @@
       <h1>¡Crea tu cuenta!</h1>
     </div>
     <br>
-      <ion-item> 
+    <ion-item-divider></ion-item-divider>
+    <br>
+    <form [formGroup] = "formRegistro" (ngSubmit)="registrar()">
+      <ion-item class="form-group"> 
         <ion-label position="floating">Ingresa tu correo electrónico</ion-label>
-        <ion-input></ion-input>
+        <ion-input formControlName = "mail" type="text" class="form-control"></ion-input>
       </ion-item>
       <br>
-    <ion-item> 
-      <ion-label position="floating">Confirma tu correo electrónico</ion-label>
-      <ion-input></ion-input>
-    </ion-item>
-    <br>
-    <ion-item> 
-      <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password"></ion-input>
-    </ion-item>
-    <br>
-    <ion-item> 
-      <ion-label position="floating">Confirma tu contraseña</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <br>
-    <ion-button expand="block" fill="solid" size="default" routerLink="/registro2">Siguiente</ion-button>
+      <ion-item class="form-group"> 
+        <ion-label position="floating">Contraseña</ion-label>
+          <ion-input formControlName = "contrasenia" type="password" class="form-control"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="form-group"> 
+        <ion-label position="floating">Nombre del local</ion-label>
+        <ion-input formControlName = "nombreUsuario" type="text" class="form-control"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item class="form-group">
+        <ion-label>Provincia</ion-label>
+        <ion-select formControlName = "provincia" class="form-control" [(ngModel)]="Provincia" cancelText="Cancelar" okText="Seleccionar">
+          <ion-select-option value="a">Buenos Aires</ion-select-option>
+          <ion-select-option value="b">Catamarca</ion-select-option>
+          <ion-select-option value="c">Chaco</ion-select-option>
+          <ion-select-option value="d">Chubut</ion-select-option>
+          <ion-select-option value="e">Ciudad de Buenos aires</ion-select-option>
+          <ion-select-option value="f">Cordoba</ion-select-option>
+          <ion-select-option value="g">Corrientes</ion-select-option>
+          <ion-select-option value="h">Entre Rios</ion-select-option>
+          <ion-select-option value="i">Formosa</ion-select-option>
+          <ion-select-option value="j">Islas Malvinas</ion-select-option>
+          <ion-select-option value="k">Jujuy</ion-select-option>
+          <ion-select-option value="l">La pampa</ion-select-option>
+          <ion-select-option value="m">La Rioja</ion-select-option>
+          <ion-select-option value="n">Mendoza</ion-select-option>
+          <ion-select-option value="o">Misiones</ion-select-option>
+          <ion-select-option value="p">Neuquen</ion-select-option>
+          <ion-select-option value="q">Rio Negro</ion-select-option>
+          <ion-select-option value="r">Salta</ion-select-option>
+          <ion-select-option value="s">San Juan</ion-select-option>
+          <ion-select-option value="t">San Luis</ion-select-option>
+          <ion-select-option value="u">Santa Fe</ion-select-option>
+          <ion-select-option value="v">Santiago del Estero</ion-select-option>
+          <ion-select-option value="w">Tierra del fuego</ion-select-option>
+          <ion-select-option value="x">Tucuman</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <br>
+        <ion-item class="form-group"> 
+          <ion-label position="floating">Localidad</ion-label>
+          <ion-input formControlName = "localidad" type="text" class="form-control"></ion-input>
+        </ion-item>
+      <br>
+        <ion-item class="form-group"> 
+          <ion-label position="floating">Dirección</ion-label>
+          <ion-input formControlName = "direccion" type="text" class="form-control"></ion-input>
+        </ion-item>
+      <ion-item-divider></ion-item-divider>
+      <br>
+      <ion-button class="form-group" expand="block" fill="solid" size="default"> Registrarme </ion-button>
+    </form>
   </ion-grid>
 </ion-content>  

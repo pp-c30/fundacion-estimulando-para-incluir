@@ -45,7 +45,7 @@ class AutenticacionController {
     ingresar(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
-            const usuario = yield db.query('select * from usuario_comercio where nombreUsuario = ? or mail = ?', [req.body.nombreUsuario, req.body.nombreUsuario]);
+            const usuario = yield db.query('select * from usuario_comercio where mail = ?', [req.body.nombreUsuario]);
             if (!usuario[0]) {
                 res.json('¡Usuario o contraseña incorrecta!');
             }

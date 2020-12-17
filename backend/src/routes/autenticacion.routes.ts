@@ -9,7 +9,7 @@ const autenticacionController = new AutenticacionController;
 const enrutadorAut = Router();
 
 
-enrutadorAut.route('/registro').post(autenticacionController.registrar);
-enrutadorAut.route('/ingreso').post(autenticacionController.ingresar);
+enrutadorAut.route('/registro1').post(autenticacionController.registrar);
+enrutadorAut.route('/login').post(autenticacionController.ingresar);
 
 export default enrutadorAut;

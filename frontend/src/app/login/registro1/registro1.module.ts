@@ -8,12 +8,15 @@ import { Registro1PageRoutingModule } from './registro1-routing.module';
 
 import { Registro1Page } from './registro1.page';
 
+import {ReactiveFormsModule} from "@angular/forms";
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Registro1PageRoutingModule
+    Registro1PageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [Registro1Page]
 })

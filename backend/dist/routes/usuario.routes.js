@@ -14,9 +14,9 @@ enrutadorUsuario.route('/usuario').get(verificarToken_1.validarToken, usuarioCon
 //Ruta con el método POST para guardar o cargar datos en la tabla USUARIO
 enrutadorUsuario.route('/usuario').post(usuarioController.guardarUsuario);
 //
-enrutadorUsuario.route('/usuario/:id').delete(usuarioController.eliminarUsuario);
+enrutadorUsuario.route('/usuario/:id').delete(verificarToken_1.validarToken, usuarioController.eliminarUsuario);
 //
-enrutadorUsuario.route('/usuario/:id').put(usuarioController.actualizarUsuario);
+enrutadorUsuario.route('/usuario/:id').put(verificarToken_1.validarToken, usuarioController.actualizarUsuario);
 //
 enrutadorUsuario.route('/usuario/:id').get(usuarioController.obtenerUnUsuario);
 //
