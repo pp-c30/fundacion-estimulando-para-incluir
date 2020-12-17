@@ -17,6 +17,8 @@ exports.AutenticacionController = void 0;
 const database_1 = require("../database");
 //Importo la libreria BCryptJS para encriptar la contraseña del usuario
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
+//Importo la libreria Json Web Token para la generación de Token de seguridad
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 class AutenticacionController {
     registrar(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -35,12 +37,30 @@ class AutenticacionController {
             //Creo la conexión a la base de datos
             const db = yield database_1.conexion();
             // Insertamos los datos de unUsuario a la tabla de usuario_comercio
-            yield db.query('insert into usuario_comercio set ?', [unUsuario]);
-            res.json('Probando guardado de usuario');
+            const resultado = yield db.query('insert into usuario_comercio set ?', [unUsuario]);
+            const token = jsonwebtoken_1.default.sign({ _id: resultado.insertId }, process.env.TOKEN_SECRET || '12qwerty');
+            res.json(token);
         });
     }
     ingresar(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
+            const db = yield database_1.conexion();
+            const usuario = yield db.query('select * from usuario_comercio where nombreUsuario = ? or mail = ?', [req.body.nombreUsuario, req.body.nombreUsuario]);
+            if (!usuario[0]) {
+                res.json('¡Usuario o contraseña incorrecta!');
+            }
+            else {
+                const correctPassword = yield bcryptjs_1.default.compare(req.body.contrasenia, usuario[0].contrasenia);
+                if (!correctPassword) {
+                    res.json('¡Contraseña incorrecta!');
+                }
+                else {
+                    const token = jsonwebtoken_1.default.sign({ _id: usuario[0].insertId }, process.env.TOKEN_SECRET || '12qwerty', {
+                        expiresIn: 60 * 60 * 24
+                    });
+                    res.header('auth-token', token).json(usuario[0]);
+                }
+            }
         });
     }
 }

@@ -8,9 +8,10 @@ const enrutadorUsuario = Router();
 import { UsuarioController } from "../controllers/usuario.controller";
 //
 let usuarioController = new UsuarioController();
+import { validarToken } from "../libs/verificarToken";
 
 //Ruta con el método GET para obtener datos de la tabla USUARIO y mostrarlos 
-enrutadorUsuario.route('/usuario').get(usuarioController.listaUsuario);
+enrutadorUsuario.route('/usuario').get(validarToken,usuarioController.listaUsuario);
 //Ruta con el método POST para guardar o cargar datos en la tabla USUARIO
 enrutadorUsuario.route('/usuario').post(usuarioController.guardarUsuario);
 //

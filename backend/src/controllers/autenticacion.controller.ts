@@ -3,6 +3,8 @@ import { Response, Request } from "express";
 import { conexion } from "../database";
 //Importo la libreria BCryptJS para encriptar la contraseña del usuario
 import bcrypt from "bcryptjs";
+//Importo la libreria Json Web Token para la generación de Token de seguridad
+import jwt from "jsonwebtoken";
 
 export class AutenticacionController {
 
@@ -28,12 +30,41 @@ export class AutenticacionController {
         //Creo la conexión a la base de datos
         const db = await conexion();
         // Insertamos los datos de unUsuario a la tabla de usuario_comercio
-        await db.query('insert into usuario_comercio set ?',[unUsuario]);
+        const resultado = await db.query('insert into usuario_comercio set ?',[unUsuario]);
 
-        res.json('Probando guardado de usuario');
+        const token:string = jwt.sign({_id:resultado.insertId},process.env.TOKEN_SECRET || '12qwerty');
+
+        res.json(token);
     }
 
     async ingresar (req:Request,res:Response){
+        
+        const db = await conexion();
+
+        const usuario = await db.query('select * from usuario_comercio where nombreUsuario = ? or mail = ?',[req.body.nombreUsuario, req.body.nombreUsuario]);
+
+        if(!usuario[0]){
+            res.json('¡Usuario o contraseña incorrecta!');
+        }
+
+        else{
+            const correctPassword = await bcrypt.compare(req.body.contrasenia, usuario[0].contrasenia);
+            
+            if(!correctPassword){
+                res.json('¡Contraseña incorrecta!')
+            }
+
+            else{
+
+                const token:string = jwt.sign({_id:usuario[0].insertId},process.env.TOKEN_SECRET || '12qwerty',{
+                    expiresIn:60*60*24
+                });
+
+                res.header('auth-token',token).json(usuario[0]);
+
+            }
+        }
+        
 
     }
 }
