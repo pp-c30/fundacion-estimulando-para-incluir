@@ -6,8 +6,16 @@
     <ion-title>productos</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+
+  <table>
+    <tbody>
+      <tr *ngFor='let producto of lista_productos'>
+        <td>{{producto.nombreProducto}}</td>
+      </tr>
+    </tbody>
+  </table>
+
   <!-- fab placed to the (vertical) center and end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button routerLink="/producto-comercio">

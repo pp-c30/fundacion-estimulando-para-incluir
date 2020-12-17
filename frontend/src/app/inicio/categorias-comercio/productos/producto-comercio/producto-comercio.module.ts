@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -12,7 +12,11 @@ import { ProductoComercioPage } from './producto-comercio.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
+    FormBuilder,
+    FormGroup,
+    Validators,
     ProductoComercioPageRoutingModule
   ],
   declarations: [ProductoComercioPage]

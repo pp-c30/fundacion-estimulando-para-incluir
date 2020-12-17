@@ -17,25 +17,23 @@
   <ion-row>
     <br><br><br>
     <ion-col class="ion-align-self-center">
-      <ion-item>
-        <ion-label position="floating">Nombre del producto</ion-label>
-        <ion-input></ion-input>
-      </ion-item> <br>
-      <ion-item>
-        <ion-label position="floating" type="number">Precio del producto</ion-label>
-        <ion-input></ion-input>
-      </ion-item> <br>
-      <!--ion-select single selection-->
-      <ion-list>
-        <ion-item>
-          <ion-label>Categoría</ion-label>
-          <ion-select okText="Aceptar" cancelText="Cancelar">
-            <ion-select-option value="brown">Comercio</ion-select-option>
-            <ion-select-option value="blonde">Ferretería</ion-select-option>
-            <ion-select-option value="black">Farmacia</ion-select-option>
-          </ion-select>
-        </ion-item>
-      </ion-list><br>
+
+      <form [FormGroup]="formProducto" (ngSubmit)='crearProducto'>
+            <div>
+            <Ioninput formControlName="nombreproducto" type="text" placeholder="Nombre del Producto"> 
+            </div>
+
+            <div class="form-group">
+            <Ioninput formControlName="precioproducto" type="text" placeholder="Precio del Producto"> 
+            </div>
+
+            <button class='btn btn success'>Crear Producto</button>
+      </form>
+
+      
+
+
+      <br>
       <!-- Expand -->
       <ion-button expand="block" routerLink="/imagen">Añadir imagen</ion-button>
     </ion-col>

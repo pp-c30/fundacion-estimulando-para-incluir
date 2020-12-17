@@ -6,13 +6,21 @@ import { ProductosPage } from './productos.page';
 const routes: Routes = [
   {
     path: '',
-    component: ProductosPage
-  },
-  {
-    path: 'producto-comercio',
-    loadChildren: () => import('./producto-comercio/producto-comercio.module').then( m => m.ProductoComercioPageModule)
+    children: [
+      {
+        path: '',
+        component: ProductosPage
+      },
+      {
+        path: ':idProducto/producto',
+        loadChildren: () => import('./producto-comercio/producto-comercio.module').then( m => m.ProductoComercioPageModule)
+      }
+    ]
   }
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
