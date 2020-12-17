@@ -28,7 +28,7 @@ const routes: Routes = [
     loadChildren: () => import('./imagen/imagen.module').then( m => m.ImagenPageModule)
   },
   {
-    path: 'inicio',
+    path: ':idComercio/inicio',
     loadChildren: () => import('./inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
