@@ -6,16 +6,22 @@ import { CategoriasComercioPage } from './categorias-comercio.page';
 const routes: Routes = [
   {
     path: '',
-    component: CategoriasComercioPage
+    children: [
+      {
+        path: '',
+        component: CategoriasComercioPage
+      },
+      {
+        path: 'categoria',
+        loadChildren: () => import('./categoria/categoria.module').then( m => m.CategoriaPageModule)
+      },
+      {
+        path: 'productos',
+        loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+      }
+    ]
   },
-  {
-    path: 'categoria',
-    loadChildren: () => import('./categoria/categoria.module').then( m => m.CategoriaPageModule)
-  },
-  {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
-  }
+  
 ];
 
 @NgModule({
