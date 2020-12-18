@@ -20,7 +20,7 @@
     <ion-row>
 
       <ion-col size="6" *ngFor="let categoria of categorias">
-        <ion-button class="cuadrado">
+        <ion-button class="cuadrado" (click)="funcion(categoria.idCategoria);" (contextmenu)="click($event, categoria.idCategoria, categoria.nombreCategoria);">
           <ion-img src="https://static.arasaac.org/pictograms/{{categoria.imagenCategoria}}/{{categoria.imagenCategoria}}_2500.png"></ion-img>
         </ion-button>
       </ion-col>

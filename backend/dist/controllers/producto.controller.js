@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProductoController = void 0;
 //Importo la funcion conexion para poder conectar a la DB
 const database_1 = require("../database");
 //En esta clase defino los metodos con todo lo que debo hacer relacionado a la tabla producto
@@ -78,7 +79,7 @@ class ProductoController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             let idCategoria = req.params.id;
-            let productos = yield db.query('SELECT id,precio FROM producto WHERE idCategoria = ?', [idCategoria]);
+            let productos = yield db.query('SELECT * FROM producto WHERE idCategoria = ?', [idCategoria]);
             res.json(productos);
         });
     }

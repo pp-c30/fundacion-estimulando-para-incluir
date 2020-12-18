@@ -1,20 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" icon="arrow-back-outline" defaultHref="categorias-comercio"></ion-back-button>
+      <ion-back-button text="" icon="arrow-back-outline" defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-title>productos</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-
-  <table>
-    <tbody>
-      <tr *ngFor='let producto of lista_productos'>
-        <td>{{producto.nombreProducto}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <br>
+  <ion-button expand="block" *ngFor='let producto of productos' (click)="funcion();" (contextmenu)="click($event, producto.id, producto.nombreProducto);">
+    {{producto.nombreProducto}}
+  </ion-button>
 
   <!-- fab placed to the (vertical) center and end -->
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">

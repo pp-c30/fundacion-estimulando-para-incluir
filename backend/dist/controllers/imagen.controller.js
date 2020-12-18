@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ImagenController = void 0;
 //Importo la funcion conexion para poder conectar a la DB
 const database_1 = require("../database");
 //En esta clase defino los metodos con todo lo que debo hacer relacionado a la tabla imagen
