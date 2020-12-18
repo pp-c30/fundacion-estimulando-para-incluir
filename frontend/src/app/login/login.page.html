@@ -22,7 +22,7 @@
     <form [formGroup]="formIngreso" (ngSubmit)="ingresar()">
     <ion-item> 
       <ion-label position="floating">Correo electrónico</ion-label>
-      <ion-input formControlName="mail" type="text" class="form-control"></ion-input>
+      <ion-input formControlName="nombreUsuario" type="text" class="form-control"></ion-input>
     </ion-item>
     <br>
     <ion-item> 
@@ -30,7 +30,7 @@
       <ion-input formControlName="contrasenia" type="password" class="form-control"></ion-input>
     </ion-item>
     <br>
-    <ion-button expand="block" fill="solid" size="default" routerLink="/inicio">Ingresar</ion-button>
+    <ion-button expand="block" fill="solid" size="default" type="submit">Ingresar</ion-button>
     </form>
     <br>
     <div style="text-align: center">

@@ -46,6 +46,7 @@ class AutenticacionController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             const usuario = yield db.query('select * from usuario_comercio where mail = ?', [req.body.nombreUsuario]);
+            console.log(req.body.nombreUsuario);
             if (!usuario[0]) {
                 res.json('¡Usuario o contraseña incorrecta!');
             }
@@ -58,7 +59,7 @@ class AutenticacionController {
                     const token = jsonwebtoken_1.default.sign({ _id: usuario[0].insertId }, process.env.TOKEN_SECRET || '12qwerty', {
                         expiresIn: 60 * 60 * 24
                     });
-                    res.header('auth-token', token).json(usuario[0]);
+                    res.json(token);
                 }
             }
         });

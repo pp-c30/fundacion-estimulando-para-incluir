@@ -43,6 +43,8 @@ export class AutenticacionController {
 
         const usuario = await db.query('select * from usuario_comercio where mail = ?',[req.body.nombreUsuario]);
 
+        console.log(req.body.nombreUsuario);
+
         if(!usuario[0]){
             res.json('¡Usuario o contraseña incorrecta!');
         }
@@ -60,7 +62,7 @@ export class AutenticacionController {
                     expiresIn:60*60*24
                 });
 
-                res.header('auth-token',token).json(usuario[0]);
+                res.json(token);
 
             }
         }

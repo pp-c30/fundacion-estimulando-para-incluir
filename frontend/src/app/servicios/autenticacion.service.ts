@@ -14,7 +14,7 @@ export class AutenticacionService {
     return this.http.post('http://localhost:3000/registro1',datosRegistro);
   }
 
-  login(datosIngreso){
+  login(datosIngreso:IUsuario){
     return this.http.post('http://localhost:3000/login',datosIngreso);
   }
 

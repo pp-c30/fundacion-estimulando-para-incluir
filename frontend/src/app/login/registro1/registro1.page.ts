@@ -27,12 +27,12 @@ export class Registro1Page implements OnInit {
   }
 
   registrar(){
-    console.log('hola mundo')
+    console.log('Registrado');
     this.autServ.register(this.formRegistro.value).subscribe(
       respuesta => {
         localStorage.setItem('token',String(respuesta));
         this.formRegistro.reset();
-        this.route.navigate(['login'])
+        this.route.navigate(['/login'])
       }
     )
   }
