@@ -17,10 +17,6 @@ export class CategoriasPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
-      if (!paramMap.has('idUsuario')) {
-        // redirect
-        return;
-      }
       this.idUsuario = paramMap.get('idUsuario');
       this.listarCategorias(this.idUsuario);
     });
