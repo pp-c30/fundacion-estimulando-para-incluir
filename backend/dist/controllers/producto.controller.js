@@ -79,7 +79,7 @@ class ProductoController {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield database_1.conexion();
             let idCategoria = req.params.id;
-            let productos = yield db.query('SELECT id,precio FROM producto WHERE idCategoria = ?', [idCategoria]);
+            let productos = yield db.query('SELECT * FROM producto WHERE idCategoria = ?', [idCategoria]);
             res.json(productos);
         });
     }
