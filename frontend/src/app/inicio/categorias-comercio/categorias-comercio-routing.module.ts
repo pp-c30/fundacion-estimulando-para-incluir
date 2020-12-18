@@ -21,6 +21,7 @@ const routes: Routes = [
       }
     ]
   },
+<<<<<<< HEAD
   {
     path: 'categoria',
     loadChildren: () => import('./categoria/categoria.module').then( m => m.CategoriaPageModule)
@@ -29,6 +30,8 @@ const routes: Routes = [
     path: 'idcategoria/productos',
     loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
   }
+=======
+>>>>>>> 6bd0435804ed467dcae01f957d3d078d81b7a618
 ];
 
 @NgModule({
