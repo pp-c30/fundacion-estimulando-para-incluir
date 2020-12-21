@@ -15,20 +15,24 @@
   </div>
   <br>
   <ion-grid >
-    <ion-row>
-      <ion-col class="ion-align-self-center">
-        <ion-item>
-          <ion-label position="floating">Nombre de la categoría</ion-label>
-          <ion-input></ion-input>
-        </ion-item> <br><br>
-        <div style="display: flex; justify-content: center;" >
-          <img routerLink="/imagen" src="https://img.icons8.com/office/40/000000/add-image.png"/>
-        </div>
-         <br>
-        <div style="display: flex; justify-content: center;">
-          <ion-button shape="round" >Crear categoría</ion-button>
-        </div>
-      </ion-col>
+    <ion-row >
+      
+        <ion-col >
+          <ion-input hidden></ion-input>
+          <ion-item>
+            <ion-label position="floating">Nombre de la categoría</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-input hidden></ion-input> <br><br>
+          <div style="display: flex; justify-content: center;" >
+            <img routerLink="/imagen" src="https://img.icons8.com/office/40/000000/add-image.png"/>
+          </div>
+          <br>
+          <div style="display: flex; justify-content: center;">
+            <ion-button shape="round" >Crear categoría</ion-button>
+          </div>
+        </ion-col>
+      
     </ion-row>
   </ion-grid>
 </ion-content>

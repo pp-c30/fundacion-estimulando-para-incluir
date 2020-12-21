@@ -13,40 +13,24 @@
       <img src="assets/img/logofeisinfondo.png">
     </ion-avatar>
   </div>
-<ion-grid>
-  <ion-row>
-    <br><br><br>
-    <ion-col class="ion-align-self-center">
+  <ion-grid>
+    <ion-row>
+      <br><br><br>
+      <ion-col class="ion-align-self-center">
+              
+              <ion-input type="text" placeholder="Nombre del Producto"></ion-input>
+              
 
-      <form [FormGroup]="formProducto" (ngSubmit)='crearProducto'>
-            <div>
-            <Ioninput formControlName="nombreproducto" type="text" placeholder="Nombre del Producto"> 
-            </div>
+              
+              <ion-input type="text" placeholder="Precio del Producto"></ion-input>
+              
 
-            <div class="form-group">
-            <Ioninput formControlName="precioproducto" type="text" placeholder="Precio del Producto"> 
-            </div>
+              <button class='btn btn success'>Crear Producto</button>
 
-            <button class='btn btn success'>Crear Producto</button>
-      </form>
-
-      
-
-
-      <br>
-      <!-- Expand -->
-      <ion-button expand="block" routerLink="/imagen">Añadir imagen</ion-button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-<ion-grid>
-  <ion-row>
-    <ion-col>
-      <img class="icons" src="https://img.icons8.com/office/60/000000/cancel.png"/>
-    </ion-col>
-    <ion-col>
-      <img class="icon" src="https://img.icons8.com/office/60/000000/checked--v2.png"/>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+        <br>
+        <!-- Expand -->
+        <ion-button expand="block" routerLink="/imagen">Añadir imagen</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

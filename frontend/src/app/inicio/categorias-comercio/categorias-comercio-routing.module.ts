@@ -12,7 +12,7 @@ const routes: Routes = [
         component: CategoriasComercioPage
       },
       {
-        path: 'categoria',
+        path: ':idCategoria/categoria',
         loadChildren: () => import('./categoria/categoria.module').then( m => m.CategoriaPageModule)
       },
       {

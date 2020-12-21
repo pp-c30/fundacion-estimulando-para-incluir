@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CategoriaService } from "../../../../servicios/categoria.service";
-import { ICategoria } from "../../../../models/categoria";
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,18 +8,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductoComercioPage implements OnInit {
 
-
-  formProducto:FormGroup;
-  lista_categorias:ICategoria[] = [];
-  idCategoria: string;
-  constructor(private activatedRoute: ActivatedRoute, private fb:FormBuilder, private serviceCategoria:CategoriaService) 
+  
+  constructor(private activatedRoute: ActivatedRoute) 
   {
-    this.formProducto = this.fb.group({
-      nombreproducto:['',Validators.required],
-      precioproducto:['',Validators.required],
-      
-    })
-    this.obtenerCategorias(this.idCategoria);
+    
   }
 
   ngOnInit() {
@@ -34,14 +23,5 @@ export class ProductoComercioPage implements OnInit {
       const idProducto = paramMap.get('idProducto');
     });
   }
-
-obtenerCategorias(id){
-  this.serviceCategoria.getCategoriasUsuario(id).subscribe(
-    respuesta => {
-      this.lista_categorias = respuesta;
-    },
-    error => console.log(error)
-  )
-}
 
 }

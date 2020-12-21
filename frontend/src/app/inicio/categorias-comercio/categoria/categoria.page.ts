@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-categoria',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaPage implements OnInit {
 
-  constructor() { }
+  formCategoria:FormGroup;
+  idUsuario;
+
+  constructor(private fb:FormBuilder, private activatedRoute:ActivatedRoute) {
+    
+  }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(paramMap => {
+      if (!paramMap.has('idComercio')) {
+        // redirect
+        return;
+      }
+      this.idUsuario = paramMap.get('idComercio');
+    });
   }
 
 }
