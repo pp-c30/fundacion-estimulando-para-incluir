@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoService } from "src/app/servicios/producto.service";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 
 @Component({
@@ -11,9 +11,9 @@ import { ActionSheetController } from '@ionic/angular';
 export class ProductosPage implements OnInit {
    
   productos;
-
+  idUsuario: string;
   idCategoria: string;
-  constructor(private activatedRoute: ActivatedRoute, private servicioProducto: ProductoService, public actionSheetController: ActionSheetController) { }
+  constructor(private route:Router, private activatedRoute: ActivatedRoute, private servicioProducto: ProductoService, public actionSheetController: ActionSheetController) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(paramMap => {
@@ -22,6 +22,7 @@ export class ProductosPage implements OnInit {
         return;
       }
       this.idCategoria = paramMap.get('idCategoria');
+      this.idUsuario = paramMap.get('idComercio');
     });
     console.log(this.idCategoria);
     this.obtenerProductos(this.idCategoria);
@@ -48,8 +49,8 @@ export class ProductosPage implements OnInit {
     }
   }
 
-  funcion() {
-    console.log('Hola Mundo');
+  funcion(id) {
+    this.route.navigate(['/'+this.idUsuario+'/inicio/categorias-comercio/'+this.idCategoria+'/productos/'+id])
   }
 
   async presentActionSheet(id, nombre) {

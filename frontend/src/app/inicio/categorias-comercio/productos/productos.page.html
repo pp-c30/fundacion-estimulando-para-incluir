@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
   <br>
-  <ion-button expand="block" *ngFor='let producto of productos' (click)="funcion();" (contextmenu)="click($event, producto.id, producto.nombreProducto);">
+  <ion-button expand="block" *ngFor='let producto of productos' (click)="funcion(producto.id);" (contextmenu)="click($event, producto.id, producto.nombreProducto);">
     {{producto.nombreProducto}}
   </ion-button>
 
